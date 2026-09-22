@@ -28,14 +28,14 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   const remove = (id: string) => setToasts((prev) => prev.filter((t) => t.id !== id))
 
   const icons = {
-    success: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
+    success: <CheckCircle2 className="w-5 h-5 text-indigo-400" />,
     error: <XCircle className="w-5 h-5 text-red-400" />,
     warning: <AlertTriangle className="w-5 h-5 text-amber-400" />,
     info: <Info className="w-5 h-5 text-blue-400" />,
   }
 
   const borders = {
-    success: 'border-emerald-800/50 bg-emerald-950/80',
+    success: 'border-indigo-800/50 bg-indigo-950/80',
     error: 'border-red-800/50 bg-red-950/80',
     warning: 'border-amber-800/50 bg-amber-950/80',
     info: 'border-blue-800/50 bg-blue-950/80',

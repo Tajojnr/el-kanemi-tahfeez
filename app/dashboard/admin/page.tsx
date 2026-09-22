@@ -498,8 +498,8 @@ export default function AdminDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 flex flex-col items-center justify-center gap-3">
-        <Loader2 className="animate-spin text-emerald-500 w-8 h-8" />
+      <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/30 flex flex-col items-center justify-center gap-3">
+        <Loader2 className="animate-spin text-indigo-500 w-8 h-8" />
         <p className="text-sm text-slate-400">Loading admin dashboard...</p>
       </div>
     )
@@ -508,7 +508,7 @@ export default function AdminDashboard() {
   /* ─────────── Render ─────────── */
 
   return (
-    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 text-white">
+    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/30 text-white">
 
       {/* ═══════════ HEADER ═══════════ */}
       <header className="bg-slate-900/80 backdrop-blur-xl border-b border-slate-800 sticky top-0 z-30">
@@ -517,7 +517,7 @@ export default function AdminDashboard() {
           {/* Top Row: Logo + Greeting + Icons */}
           <div className="flex justify-between items-start gap-4">
             <div className="flex items-center gap-3 min-w-0 flex-1">
-              <div className="w-12 h-12 bg-emerald-900/30 rounded-xl flex items-center justify-center border border-emerald-800/30 shrink-0">
+              <div className="w-12 h-12 bg-indigo-900/30 rounded-xl flex items-center justify-center border border-indigo-800/30 shrink-0">
                 <img
                   src="/logo/logo.png"
                   className="w-9 h-9 object-contain"
@@ -527,7 +527,7 @@ export default function AdminDashboard() {
               </div>
               <div className="min-w-0">
                 <h1 className="text-base sm:text-lg font-bold truncate">El-Kanemi College of Islamic Theology</h1>
-                <p className="text-xs sm:text-sm font-medium text-emerald-400 flex items-center gap-1.5">
+                <p className="text-xs sm:text-sm font-medium text-indigo-400 flex items-center gap-1.5">
                   <span>{greeting},</span>
                   <span className="font-semibold text-white truncate max-w-[140px] sm:max-w-none">{adminName}</span>
                   <span>👋</span>
@@ -564,7 +564,7 @@ export default function AdminDashboard() {
             <div className="flex gap-2 w-full sm:w-auto">
               <Link
                 href="/dashboard/admin/classes"
-                className="bg-emerald-800 hover:bg-emerald-700 px-4 py-2.5 rounded-xl flex items-center gap-2 justify-center font-semibold text-sm transition-colors shadow-lg shadow-emerald-950/20 text-white flex-1 sm:flex-none"
+                className="bg-indigo-800 hover:bg-indigo-700 px-4 py-2.5 rounded-xl flex items-center gap-2 justify-center font-semibold text-sm transition-colors shadow-lg shadow-indigo-950/20 text-white flex-1 sm:flex-none"
               >
                 <FolderEdit className="w-4 h-4" />
                 <span className="hidden sm:inline">Manage Classes</span>
@@ -582,7 +582,7 @@ export default function AdminDashboard() {
 
               <button
                 onClick={() => setShowReportModal(true)}
-                className="bg-emerald-700 hover:bg-emerald-600 px-4 py-2.5 rounded-xl flex items-center gap-2 justify-center font-semibold text-sm transition-colors shadow-lg shadow-emerald-900/20 flex-1 sm:flex-none"
+                className="bg-indigo-700 hover:bg-indigo-600 px-4 py-2.5 rounded-xl flex items-center gap-2 justify-center font-semibold text-sm transition-colors shadow-lg shadow-indigo-900/20 flex-1 sm:flex-none"
               >
                 <FileText className="w-4 h-4" />
                 <span className="hidden sm:inline">Generate Report</span>
@@ -609,7 +609,7 @@ export default function AdminDashboard() {
             icon={<Users className="w-4 h-4" />}
             value={totalStudents}
             label="Total Students"
-            color="emerald"
+            color="indigo"
             index={1}
           />
           <StatCard
@@ -648,7 +648,7 @@ export default function AdminDashboard() {
               placeholder="Search classes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500/40 outline-none transition-all"
+              className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/40 outline-none transition-all"
             />
           </div>
         )}
@@ -656,7 +656,7 @@ export default function AdminDashboard() {
         {/* ─── Class Leaderboard ─── */}
         <section>
           <div className="flex items-center gap-2 mb-4">
-            <TrendingUp className="w-5 h-5 text-emerald-400" />
+            <TrendingUp className="w-5 h-5 text-indigo-400" />
             <h2 className="text-lg font-semibold">Class Performance Leaderboard</h2>
           </div>
 
@@ -703,7 +703,7 @@ export default function AdminDashboard() {
                         <div className="flex items-center gap-3 min-w-0 flex-1">
                           <span className="text-xl shrink-0">{medal}</span>
                           <div className="min-w-0 flex-1">
-                            <p className="font-semibold group-hover:text-emerald-300 transition-colors truncate">
+                            <p className="font-semibold group-hover:text-indigo-300 transition-colors truncate">
                               {c.display_name_en}
                             </p>
                             <div className="flex items-center gap-2 mt-0.5 flex-wrap">
@@ -718,7 +718,7 @@ export default function AdminDashboard() {
 
                         <div className="flex items-center gap-3 shrink-0">
                           <div className="text-right">
-                            <p className="text-lg font-bold text-emerald-400">
+                            <p className="text-lg font-bold text-indigo-400">
                               {c.avg_safhas?.toFixed(1) || '0'}
                             </p>
                             <p className="text-[10px] text-slate-400 uppercase tracking-wide">
@@ -757,7 +757,7 @@ export default function AdminDashboard() {
 
             <div className="space-y-2">
               {completionData.map((c, idx) => {
-                const paceColor = c.pace === 'accelerating' ? 'text-emerald-400'
+                const paceColor = c.pace === 'accelerating' ? 'text-indigo-400'
                   : c.pace === 'declining' ? 'text-red-400'
                   : c.pace === 'steady' ? 'text-blue-400'
                   : 'text-slate-500'
@@ -796,7 +796,7 @@ export default function AdminDashboard() {
 
                     <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full transition-all duration-700"
+                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-700"
                         style={{ width: `${pctDone}%` }}
                       />
                     </div>
@@ -829,7 +829,7 @@ export default function AdminDashboard() {
                 <h3 className="text-lg font-bold">{selectedClass.display_name_en}</h3>
                 <div className="flex gap-3 mt-1 flex-wrap">
                   <p className="text-xs text-slate-400">{selectedClass.total_students} students</p>
-                  <p className="text-xs text-emerald-400">
+                  <p className="text-xs text-indigo-400">
                     Avg {selectedClass.avg_safhas?.toFixed(1) || '0'} safhas/wk
                   </p>
                   <p className="text-xs text-blue-400">
@@ -845,7 +845,7 @@ export default function AdminDashboard() {
             <div className="overflow-y-auto flex-1 p-3 space-y-2">
               {classStudentsLoading ? (
                 <div className="flex justify-center py-10">
-                  <Loader2 className="animate-spin text-emerald-500 w-6 h-6" />
+                  <Loader2 className="animate-spin text-indigo-500 w-6 h-6" />
                 </div>
               ) : classStudents.length === 0 ? (
                 <p className="text-slate-400 text-sm text-center py-10">No active students.</p>
@@ -866,7 +866,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <div className="text-right shrink-0">
-                      <span className="text-xs bg-emerald-900/30 text-emerald-300 px-2 py-1 rounded-lg font-semibold border border-emerald-800/30">
+                      <span className="text-xs bg-indigo-900/30 text-indigo-300 px-2 py-1 rounded-lg font-semibold border border-indigo-800/30">
                         P. {s.current_page || 1}
                       </span>
                       <p className="text-[10px] text-slate-500 mt-1">Juz {s.current_hizb || 1}</p>
@@ -902,7 +902,7 @@ export default function AdminDashboard() {
               {atRiskStudents.length === 0 ? (
                 <div className="text-center py-10">
                   <div className="text-4xl mb-2">🎉</div>
-                  <p className="text-emerald-400 font-semibold">No at-risk students!</p>
+                  <p className="text-indigo-400 font-semibold">No at-risk students!</p>
                   <p className="text-xs text-slate-500 mt-1">Everyone is on track</p>
                 </div>
               ) : (
@@ -952,7 +952,7 @@ export default function AdminDashboard() {
               <input
                 value={tempTermData.name || ''}
                 onChange={(e) => setTempTermData({ ...tempTermData, name: e.target.value })}
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none"
                 placeholder="e.g. Term 1 - 2024/2025"
                 disabled={savingTerm}
               />
@@ -966,7 +966,7 @@ export default function AdminDashboard() {
                 max={52}
                 value={tempTermData.current_week || 1}
                 onChange={(e) => setTempTermData({ ...tempTermData, current_week: Number(e.target.value) })}
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white text-lg font-bold text-center focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white text-lg font-bold text-center focus:ring-2 focus:ring-indigo-500/40 outline-none"
                 disabled={savingTerm}
               />
             </div>
@@ -983,7 +983,7 @@ export default function AdminDashboard() {
             <button
               onClick={saveTerm}
               disabled={savingTerm}
-              className="flex-1 bg-emerald-700 hover:bg-emerald-600 p-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+              className="flex-1 bg-indigo-700 hover:bg-indigo-600 p-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {savingTerm ? (
                 <>
@@ -1006,7 +1006,7 @@ export default function AdminDashboard() {
                 value={principalName}
                 onChange={(e) => setPrincipalName(e.target.value)}
                 placeholder="Enter Principal name"
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none"
                 disabled={generating}
               />
             </div>
@@ -1020,7 +1020,7 @@ export default function AdminDashboard() {
                   disabled={generating}
                   className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border transition-all disabled:opacity-50 ${
                     !isEndOfTerm
-                      ? 'bg-emerald-700 border-emerald-500 text-white shadow-md'
+                      ? 'bg-indigo-700 border-indigo-500 text-white shadow-md'
                       : 'bg-slate-800 border-slate-700 text-slate-400'
                   }`}
                 >
@@ -1053,7 +1053,7 @@ export default function AdminDashboard() {
                 onClick={generateSchoolReport}
                 disabled={generating}
                 className={`flex-1 p-2.5 rounded-xl font-semibold transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
-                  isEndOfTerm ? 'bg-amber-700 hover:bg-amber-600' : 'bg-emerald-700 hover:bg-emerald-600'
+                  isEndOfTerm ? 'bg-amber-700 hover:bg-amber-600' : 'bg-indigo-700 hover:bg-indigo-600'
                 }`}
               >
                 {generating ? (
@@ -1084,7 +1084,7 @@ function StatCard({ icon, value, label, color, subtext, action, onClick, index }
   icon: React.ReactNode
   value: string | number
   label: string
-  color: 'blue' | 'emerald' | 'red' | 'purple'
+  color: 'blue' | 'indigo' | 'red' | 'purple'
   subtext?: string
   action?: React.ReactNode
   onClick?: () => void
@@ -1092,7 +1092,7 @@ function StatCard({ icon, value, label, color, subtext, action, onClick, index }
 }) {
   const colors = {
     blue: 'border-l-blue-500 text-blue-400 bg-blue-900/30',
-    emerald: 'border-l-emerald-500 text-emerald-400 bg-emerald-900/30',
+    indigo: 'border-l-indigo-500 text-indigo-400 bg-indigo-900/30',
     red: 'border-l-red-500 text-red-400 bg-red-900/30',
     purple: 'border-l-purple-500 text-purple-400 bg-purple-900/30',
   }

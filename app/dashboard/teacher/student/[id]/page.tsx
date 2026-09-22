@@ -221,7 +221,7 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
   }
 
   return (
-    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 text-white pb-24">
+    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/30 text-white pb-24">
 
       {/* ✅ Premium Loading Overlay injected here */}
       <LoadingOverlay isLoading={loading} text="جاري التحميل | Loading..." />
@@ -239,7 +239,7 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
           <div className="flex gap-2">
             <button
               onClick={shareToWhatsApp}
-              className="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-lg shadow-emerald-950/30"
+              className="bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-lg shadow-indigo-950/30"
               title="Share report to parent on WhatsApp"
             >
               <Share2 className="w-3.5 h-3.5" />
@@ -268,14 +268,14 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold text-white">{student?.full_name}</h1>
                 <p className="text-xs text-slate-400 mt-1">
-                  {className} · Ustaz: <span className="text-emerald-400 font-medium">{teacherName}</span>
+                  {className} · Ustaz: <span className="text-indigo-400 font-medium">{teacherName}</span>
                 </p>
               </div>
             </div>
 
             <div className="bg-slate-950/70 border border-slate-800 px-4 py-2.5 rounded-xl text-right shrink-0">
               <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Current Position</p>
-              <p className="text-lg font-bold text-emerald-400">
+              <p className="text-lg font-bold text-indigo-400">
                 Juz {student?.current_hizb || 1} · Page {student?.current_page || 1}
                 <span className="text-xs text-slate-500 font-normal"> / 604</span>
               </p>
@@ -286,11 +286,11 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
           <div className="mt-5 space-y-2">
             <div className="flex justify-between text-xs font-medium">
               <span className="text-slate-400">Total Quran Memorisation</span>
-              <span className="text-emerald-400 font-bold">{stats.progressPct}% Complete ({student?.current_page || 1} of 604 pages)</span>
+              <span className="text-indigo-400 font-bold">{stats.progressPct}% Complete ({student?.current_page || 1} of 604 pages)</span>
             </div>
             <div className="w-full h-3 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
               <div
-                className="h-full bg-gradient-to-r from-emerald-600 via-emerald-400 to-amber-400 rounded-full transition-all duration-1000"
+                className="h-full bg-gradient-to-r from-indigo-600 via-indigo-400 to-amber-400 rounded-full transition-all duration-1000"
                 style={{ width: `${stats.progressPct}%` }}
               />
             </div>
@@ -300,11 +300,11 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
         {/* Quick Summary Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl text-center">
-            <p className="text-2xl font-bold text-emerald-400">{stats.totalSafhas}</p>
+            <p className="text-2xl font-bold text-indigo-400">{stats.totalSafhas}</p>
             <p className="text-xs text-slate-400 uppercase mt-1 tracking-wide">Total Safhas</p>
           </div>
           <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl text-center">
-            <p className="text-2xl font-bold text-emerald-400">{stats.avgSafhas}</p>
+            <p className="text-2xl font-bold text-indigo-400">{stats.avgSafhas}</p>
             <p className="text-xs text-slate-400 uppercase mt-1 tracking-wide">Avg Safhas/wk</p>
           </div>
           <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl text-center">
@@ -351,11 +351,11 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
         <section className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-emerald-400" />
+              <BookOpen className="w-5 h-5 text-indigo-400" />
               <h2 className="text-base font-bold text-white">30-Juz Progress Map</h2>
             </div>
             <div className="flex items-center gap-3 text-xs text-slate-400">
-              <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-emerald-500" /> Completed</span>
+              <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-indigo-500" /> Completed</span>
               <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-amber-500" /> Current</span>
               <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-slate-700" /> Upcoming</span>
             </div>
@@ -372,7 +372,7 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
                   key={j.juz}
                   className={`p-2.5 rounded-xl border text-center transition-all ${
                     isCompleted
-                      ? 'bg-emerald-950/40 border-emerald-600/60 text-emerald-300 shadow-sm'
+                      ? 'bg-indigo-950/40 border-indigo-600/60 text-indigo-300 shadow-sm'
                       : isCurrent
                       ? 'bg-amber-950/40 border-amber-500 text-amber-300 shadow-md ring-2 ring-amber-500/20'
                       : 'bg-slate-900/40 border-slate-800/60 text-slate-500'
@@ -416,7 +416,7 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
                     <div className="space-y-1 min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <span className={`text-xs font-bold px-2 py-0.5 rounded-md ${
-                          isM ? 'bg-purple-950 text-purple-300 border border-purple-800/50' : 'bg-emerald-950 text-emerald-300 border border-emerald-800/50'
+                          isM ? 'bg-purple-950 text-purple-300 border border-purple-800/50' : 'bg-indigo-950 text-indigo-300 border border-indigo-800/50'
                         }`}>
                           {isM ? '🔄 Murajaah' : '📖 Hifz'}
                         </span>

@@ -8,7 +8,7 @@ export function StudentAvatar({ name, size = 'md' }: { name: string; size?: 'sm'
 
   // Generate consistent color from name
   const colors = [
-    'bg-emerald-800 text-emerald-200',
+    'bg-indigo-800 text-indigo-200',
     'bg-blue-800 text-blue-200',
     'bg-purple-800 text-purple-200',
     'bg-amber-800 text-amber-200',

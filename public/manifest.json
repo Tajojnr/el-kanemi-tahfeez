@@ -1,11 +1,11 @@
 {
-  "name": "El-Kanemi Tahfeez Tahfeez",
+  "name": "El-Kanemi College Tahfeez",
   "short_name": "El-Kanemi Tahfeez",
-  "description": "Hifz Management System for El-Kanemi College of Islamic Theology",
+  "description": "Quranic Memorisation & Hifz Management System for El-Kanemi College of Islamic Theology",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020617",
-  "theme_color": "#1e3a5f",
+  "background_color": "#0f172a",
+  "theme_color": "#1e1b4b",
   "orientation": "portrait",
   "icons": [
     {

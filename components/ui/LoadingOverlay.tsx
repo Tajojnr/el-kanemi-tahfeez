@@ -40,7 +40,7 @@ export function LoadingOverlay({ isLoading, text }: { isLoading: boolean; text?:
         </div>
         
         {text && (
-          <p className="mt-6 text-xs sm:text-sm font-semibold text-emerald-400 tracking-widest uppercase animate-pulse">
+          <p className="mt-6 text-xs sm:text-sm font-semibold text-indigo-400 tracking-widest uppercase animate-pulse">
             {text}
           </p>
         )}

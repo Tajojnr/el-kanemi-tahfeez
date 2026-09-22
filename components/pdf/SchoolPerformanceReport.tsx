@@ -5,7 +5,7 @@ import {
   Document, Page, Text, View, StyleSheet, Image,
 } from '@react-pdf/renderer'
 
-const PRIMARY_EMERALD = '#042f1a'
+const PRIMARY_EMERALD = '#1e1b4b'
 const SECONDARY_GOLD = '#b45309'
 const IVORY_TINT = '#fafaf9'
 const TEXT_DARK = '#1e293b'
@@ -82,7 +82,7 @@ function getSchoolBadge(classes: any[], target: number) {
   const safeClasses = Array.isArray(classes) ? classes : []
   const onTarget = safeClasses.filter(c => (c.avg_safhas || 0) >= target).length
   const ratio = safeClasses.length ? onTarget / safeClasses.length : 1
-  if (ratio >= 0.75) return { label: 'SCHOOL OF EXCELLENCE', bg: '#dcfce7', color: '#15803d' }
+  if (ratio >= 0.75) return { label: 'SCHOOL OF EXCELLENCE', bg: '#e0e7ff', color: '#4338ca' }
   if (ratio >= 0.5) return { label: 'HEALTHY / ACTIVE PROGRESS', bg: '#fef9c3', color: '#a16207' }
   return { label: 'CRITICAL ATTENTION NEEDED', bg: '#fee2e2', color: '#b91c1c' }
 }
@@ -186,7 +186,7 @@ export const SchoolPerformanceReportPDF = ({
             ))}
             {safeRisk.length === 0 && (
               <View style={{ padding: 20, alignItems: 'center' }}>
-                <Text style={{ fontSize: 8, color: '#15803d', fontWeight: 'bold' }}>All school records healthy</Text>
+                <Text style={{ fontSize: 8, color: '#4338ca', fontWeight: 'bold' }}>All school records healthy</Text>
               </View>
             )}
           </View>

@@ -746,7 +746,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
   const isInvalid = activeEndPage < activeStartPage
 
   return (
-    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 text-white">
+    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/30 text-white">
 
       {/* ✅ Premium Loading Overlay */}
       <LoadingOverlay isLoading={loading} text="جاري التحميل | Loading..." />
@@ -756,13 +756,13 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
         <div className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-start gap-4 max-w-5xl mx-auto">
           <div className="flex-1">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-emerald-900/30 rounded-xl flex items-center justify-center border border-emerald-800/30 shrink-0">
+              <div className="w-12 h-12 bg-indigo-900/30 rounded-xl flex items-center justify-center border border-indigo-800/30 shrink-0">
                 <img src="/logo/logo.png" className="w-9 h-9 object-contain" alt="Logo"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
               </div>
               <div>
                 <h1 className="text-base sm:text-lg font-bold">El-Kanemi College</h1>
-                <p className="text-xs sm:text-sm font-medium text-emerald-400 flex items-center gap-1.5">
+                <p className="text-xs sm:text-sm font-medium text-indigo-400 flex items-center gap-1.5">
                   <span>{greeting},</span>
                   <span className="font-semibold text-white truncate max-w-[160px] sm:max-w-none">{teacherName}</span>
                   <span>👋</span>
@@ -771,7 +771,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
             </div>
 
             <div className="mt-3 flex flex-wrap items-center gap-2">
-              <h2 className="text-lg sm:text-xl font-bold text-emerald-300">{classNameEn}</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-indigo-300">{classNameEn}</h2>
               <button onClick={() => { setTempTarget(targetSafhas); setShowTargetModal(true) }}
                 className="p-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
                 <Settings className="w-4 h-4 text-slate-400" />
@@ -788,7 +788,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
           <div className="flex gap-2 self-end sm:self-start w-full sm:w-auto">
             {students.length > 0 && (
               <button onClick={handleBulkClassDownload} disabled={downloadingClass}
-                className="flex-1 sm:flex-none px-3 py-2 bg-emerald-800 hover:bg-emerald-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 disabled:opacity-50">
+                className="flex-1 sm:flex-none px-3 py-2 bg-indigo-800 hover:bg-indigo-700 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 disabled:opacity-50">
                 {downloadingClass ? <Loader2 className="w-4 h-4 animate-spin" /> : <FolderDown className="w-4 h-4" />}
                 <span>Class PDF</span>
               </button>
@@ -816,7 +816,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
 
         <div className="grid grid-cols-3 gap-2 sm:gap-3">
           <StatCard icon={<Users className="w-4 h-4" />} value={stats.total} label="الطلاب | Students" color="blue" />
-          <StatCard icon={<TrendingUp className="w-4 h-4" />} value={stats.onTrack} label="على المسار | On Track" color="emerald"
+          <StatCard icon={<TrendingUp className="w-4 h-4" />} value={stats.onTrack} label="على المسار | On Track" color="indigo"
             subtext={stats.total > 0 ? `${Math.round((stats.onTrack / stats.total) * 100)}%` : '—'} />
           <StatCard icon={<AlertTriangle className="w-4 h-4" />} value={stats.needAttention} label="يحتاج انتباه | Attention" color="red"
             subtext={stats.total > 0 ? `${Math.round((stats.needAttention / stats.total) * 100)}%` : '—'} />
@@ -828,16 +828,16 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
               <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input type="text" placeholder="Search students / بحث عن طالب..." value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500/40 outline-none" />
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-500/40 outline-none" />
             </div>
             <select value={sortMode} onChange={(e) => setSortMode(e.target.value as SortMode)}
-              className="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:ring-2 focus:ring-emerald-500/40 outline-none">
+              className="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:ring-2 focus:ring-indigo-500/40 outline-none">
               <option value="danger">⚠️ يحتاج انتباه (Attention first)</option>
               <option value="name">🔤 الاسم (Name A-Z)</option>
               <option value="progress">📈 التقدم (Most progress)</option>
             </select>
             <button onClick={() => setShowAddStudent(true)}
-              className="bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl flex items-center gap-2 justify-center font-semibold text-sm transition-colors shrink-0">
+              className="bg-indigo-700 hover:bg-indigo-600 text-white px-4 py-2.5 rounded-xl flex items-center gap-2 justify-center font-semibold text-sm transition-colors shrink-0">
               <Plus className="w-4 h-4" /> إضافة | Add
             </button>
           </div>
@@ -876,7 +876,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
               <label className="block text-xs text-slate-400 mb-1.5 font-medium">Parent Phone Number (Optional)</label>
               <input type="tel" placeholder="e.g. 2348012345678" value={whatsappModal.phoneNumber}
                 onChange={e => setWhatsappModal(prev => ({ ...prev, phoneNumber: e.target.value }))}
-                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white text-sm outline-none focus:ring-2 focus:ring-emerald-500/40" />
+                className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white text-sm outline-none focus:ring-2 focus:ring-indigo-500/40" />
             </div>
 
             <div>
@@ -889,11 +889,11 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
             <div className="flex gap-2 pt-1">
               <button type="button" onClick={copyWhatsAppText}
                 className="flex-1 bg-slate-800 hover:bg-slate-700 p-3 rounded-xl font-semibold text-xs flex items-center justify-center gap-1.5">
-                {copiedMessage ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
+                {copiedMessage ? <Check className="w-4 h-4 text-indigo-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
                 <span>{copiedMessage ? 'Copied!' : 'Copy Text'}</span>
               </button>
               <button type="button" onClick={launchWhatsApp}
-                className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white p-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5">
+                className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white p-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5">
                 <Send className="w-4 h-4" />
                 <span>Open WhatsApp</span>
               </button>
@@ -922,10 +922,10 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
 
             <div className="flex gap-2">
               <button type="button" onClick={() => setLogTab('hifz')}
-                className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all relative ${logTab === 'hifz' ? 'bg-emerald-700 text-white' : 'bg-slate-800 text-slate-400'}`}>
+                className={`flex-1 py-2.5 rounded-xl text-sm font-bold transition-all relative ${logTab === 'hifz' ? 'bg-indigo-700 text-white' : 'bg-slate-800 text-slate-400'}`}>
                 📖 الحفظ | Hifz
                 {selectedStudent.hifzLoggedThisWeek && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-emerald-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold shadow-lg border border-slate-900">✓ Logged</span>
+                  <span className="absolute -top-1.5 -right-1.5 bg-indigo-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold shadow-lg border border-slate-900">✓ Logged</span>
                 )}
               </button>
               <button type="button" onClick={() => setLogTab('murajaah')}
@@ -938,13 +938,13 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
             </div>
 
             {selectedStudent.hifzLoggedThisWeek && selectedStudent.murajaahLoggedThisWeek && (
-              <div className="bg-emerald-950/40 border border-emerald-800/40 text-emerald-300 text-xs p-2.5 rounded-lg text-center">
+              <div className="bg-indigo-950/40 border border-indigo-800/40 text-indigo-300 text-xs p-2.5 rounded-lg text-center">
                 ✓ Both Hifz & Murajaah logged this week. Saving again will update the record.
               </div>
             )}
 
             <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 space-y-3">
-              <p className={`text-xs font-bold uppercase ${logTab === 'hifz' ? 'text-emerald-400' : 'text-purple-400'}`}>
+              <p className={`text-xs font-bold uppercase ${logTab === 'hifz' ? 'text-indigo-400' : 'text-purple-400'}`}>
                 Pages {logTab === 'hifz' ? 'Memorised' : 'Reviewed'}
               </p>
               <div className="grid grid-cols-2 gap-3">
@@ -953,14 +953,14 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
                   <input type="number" min={1} max={604}
                     value={logTab === 'hifz' ? hifzStartPage : murStartPage}
                     onChange={e => logTab === 'hifz' ? setHifzStartPage(Number(e.target.value)) : setMurStartPage(Number(e.target.value))}
-                    className="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl text-lg font-bold text-center text-white focus:ring-2 focus:ring-emerald-500/40 outline-none" />
+                    className="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl text-lg font-bold text-center text-white focus:ring-2 focus:ring-indigo-500/40 outline-none" />
                 </div>
                 <div>
                   <label className="text-xs text-slate-400 mb-1 block">إلى صفحة | To Page</label>
                   <input type="number" min={1} max={604}
                     value={logTab === 'hifz' ? hifzEndPage : murEndPage}
                     onChange={e => logTab === 'hifz' ? setHifzEndPage(Number(e.target.value)) : setMurEndPage(Number(e.target.value))}
-                    className="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl text-lg font-bold text-center text-white focus:ring-2 focus:ring-emerald-500/40 outline-none" />
+                    className="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl text-lg font-bold text-center text-white focus:ring-2 focus:ring-indigo-500/40 outline-none" />
                 </div>
               </div>
 
@@ -968,7 +968,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
               <div className="bg-slate-900 border border-slate-800 p-2.5 rounded-xl text-xs space-y-1">
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">السورة | Surah:</span>
-                  <span className="font-bold text-emerald-400">{logTab === 'hifz' ? hifzStartSurah : murStartSurah} → {logTab === 'hifz' ? hifzEndSurah : murEndSurah}</span>
+                  <span className="font-bold text-indigo-400">{logTab === 'hifz' ? hifzStartSurah : murStartSurah} → {logTab === 'hifz' ? hifzEndSurah : murEndSurah}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400">الجزء | Juz:</span>
@@ -979,7 +979,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
               {/* AUTO-PREFILLED HEAD & TAIL */}
               <div className="space-y-2 pt-1">
                 <div>
-                  <label className="text-[10px] text-emerald-400 mb-1 flex items-center justify-between font-bold">
+                  <label className="text-[10px] text-indigo-400 mb-1 flex items-center justify-between font-bold">
                     <span className="text-[9px] text-slate-500">✨ Pre-filled</span>
                     <span>بداية الصفحة | Start Words</span>
                   </label>
@@ -1001,7 +1001,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
 
             <div className={`p-3 rounded-xl border flex justify-between items-center ${
               isInvalid ? 'bg-red-950/40 border-red-800'
-              : totalSafhasPreview >= targetSafhas ? 'bg-emerald-950/40 border-emerald-800'
+              : totalSafhasPreview >= targetSafhas ? 'bg-indigo-950/40 border-indigo-800'
               : 'bg-amber-950/40 border-amber-800'
             }`}>
               <span className="text-sm text-slate-300">{isInvalid ? 'Invalid range' : 'Total'}</span>
@@ -1011,12 +1011,12 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
             <textarea value={logTab === 'hifz' ? hifzComments : murComments}
               onChange={e => logTab === 'hifz' ? setHifzComments(e.target.value) : setMurComments(e.target.value)}
               placeholder="الملاحظات | Notes: tajweed, retention, quality..."
-              className="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500/40 outline-none resize-none"
+              className="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-indigo-500/40 outline-none resize-none"
               rows={2} />
 
             <button type="submit" disabled={isSubmitting || isInvalid}
               className={`w-full p-3.5 rounded-xl font-bold text-base transition-all disabled:opacity-50 flex items-center justify-center gap-2 ${
-                logTab === 'hifz' ? 'bg-emerald-700 hover:bg-emerald-600' : 'bg-purple-700 hover:bg-purple-600'
+                logTab === 'hifz' ? 'bg-indigo-700 hover:bg-indigo-600' : 'bg-purple-700 hover:bg-purple-600'
               }`}>
               {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Saving...</>
               : `✓ حفظ ${logTab === 'hifz' ? 'الحفظ' : 'المراجعة'} | Save`}
@@ -1089,7 +1089,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
               <button onClick={() => setShowHistoryModal(false)} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
             </div>
             <div className="overflow-y-auto flex-1 p-3 space-y-2">
-              {historyLoading ? <div className="flex justify-center py-10"><Loader2 className="animate-spin text-emerald-500" /></div>
+              {historyLoading ? <div className="flex justify-center py-10"><Loader2 className="animate-spin text-indigo-500" /></div>
               : historyLogs.length === 0 ? <p className="text-slate-400 text-sm text-center py-10">No logs yet</p>
               : historyLogs.map(log => {
                 const safhas = log.end_safha && log.start_safha ? Math.max(0, log.end_safha - log.start_safha + 1) : 0
@@ -1102,7 +1102,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
                     </div>
                     <p className="text-xs text-slate-500">{log.week_start}</p>
                     {log.start_surah && <p className="text-xs text-slate-400 mt-1">{log.start_surah} → {log.end_surah}</p>}
-                    {log.head_of_safha && <p className="text-xs text-emerald-400 mt-1 text-right" dir="rtl">📗 {log.head_of_safha}</p>}
+                    {log.head_of_safha && <p className="text-xs text-indigo-400 mt-1 text-right" dir="rtl">📗 {log.head_of_safha}</p>}
                     {log.tail_of_safha && <p className="text-xs text-red-400 text-right" dir="rtl">📕 {log.tail_of_safha}</p>}
                     {log.comments && <p className="text-xs text-slate-400 italic mt-1 border-l-2 border-slate-700 pl-2">{log.comments}</p>}
                   </div>
@@ -1122,7 +1122,7 @@ _May Allah bless ${student.name}'s journey in memorising the Holy Quran and gran
               className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white outline-none text-sm" placeholder="Mu'allim name" />
             <div className="flex gap-2">
               <button type="button" onClick={() => setIsEndOfTerm(false)}
-                className={`flex-1 py-2 rounded-xl text-sm font-bold border ${!isEndOfTerm ? 'bg-emerald-700 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}>Weekly</button>
+                className={`flex-1 py-2 rounded-xl text-sm font-bold border ${!isEndOfTerm ? 'bg-indigo-700 border-indigo-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}>Weekly</button>
               <button type="button" onClick={() => setIsEndOfTerm(true)}
                 className={`flex-1 py-2 rounded-xl text-sm font-bold border ${isEndOfTerm ? 'bg-amber-700 border-amber-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}>End of Term</button>
             </div>
@@ -1144,19 +1144,19 @@ type StatCardProps = {
   icon: React.ReactNode
   value: number
   label: string
-  color: 'blue' | 'emerald' | 'red'
+  color: 'blue' | 'indigo' | 'red'
   subtext?: string
 }
 
 function StatCard({ icon, value, label, color, subtext }: StatCardProps) {
-  const c: Record<'blue' | 'emerald' | 'red', string> = {
+  const c: Record<'blue' | 'indigo' | 'red', string> = {
     blue: 'text-blue-400 bg-blue-900/30',
-    emerald: 'text-emerald-400 bg-emerald-900/30',
+    indigo: 'text-indigo-400 bg-indigo-900/30',
     red: 'text-red-400 bg-red-900/30'
   }
   return (
     <div className="bg-slate-900/60 backdrop-blur border border-slate-800 p-3 sm:p-4 rounded-xl">
-      <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 ${c[color] || c.emerald}`}>{icon}</div>
+      <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-2 ${c[color] || c.indigo}`}>{icon}</div>
       <p className="text-xl sm:text-2xl font-bold">{value}</p>
       <p className="text-xs text-slate-400">{label}{subtext && <span className="text-slate-500"> · {subtext}</span>}</p>
     </div>
@@ -1183,9 +1183,9 @@ function StudentCard({ student, target, index, menuOpen, onToggleMenu, onLog, on
   const bc: Record<'danger' | 'warning' | 'safe', string> = {
     danger: 'border-l-red-500',
     warning: 'border-l-amber-500',
-    safe: 'border-l-emerald-500'
+    safe: 'border-l-indigo-500'
   }
-  const borderColor = bc[s.status] || 'border-l-emerald-500'
+  const borderColor = bc[s.status] || 'border-l-indigo-500'
 
   return (
     <div className={`relative ${menuOpen ? 'z-30' : 'z-0'} bg-slate-900/60 backdrop-blur border border-slate-800 border-l-4 ${borderColor} p-3 sm:p-4 rounded-xl transition-all hover:bg-slate-800/60 animate-slide-up`}
@@ -1198,11 +1198,11 @@ function StudentCard({ student, target, index, menuOpen, onToggleMenu, onLog, on
           <div className="flex items-center gap-2 flex-wrap">
             <Link href={`/dashboard/teacher/student/${s.id}`}
               id={isFirst ? 'tour-profile' : undefined}
-              className="font-semibold text-white hover:text-emerald-300 transition-colors truncate">
+              className="font-semibold text-white hover:text-indigo-300 transition-colors truncate">
               {s.name}
             </Link>
             {s.hifzLoggedThisWeek && (
-              <span className="inline-flex items-center gap-0.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-800/40 uppercase tracking-wide">
+              <span className="inline-flex items-center gap-0.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-indigo-950/60 text-indigo-400 border border-indigo-800/40 uppercase tracking-wide">
                 <BookOpen className="w-2.5 h-2.5" /> Hifz
               </span>
             )}
@@ -1218,7 +1218,7 @@ function StudentCard({ student, target, index, menuOpen, onToggleMenu, onLog, on
         <div className="flex items-center gap-1">
           <button onClick={onShare}
             id={isFirst ? 'tour-whatsapp' : undefined}
-            className="p-2 bg-emerald-950/60 hover:bg-emerald-900 text-emerald-400 border border-emerald-800/40 rounded-lg transition-all" title="Share to WhatsApp">
+            className="p-2 bg-indigo-950/60 hover:bg-indigo-900 text-indigo-400 border border-indigo-800/40 rounded-lg transition-all" title="Share to WhatsApp">
             <Share2 className="w-4 h-4" />
           </button>
 
@@ -1230,13 +1230,13 @@ function StudentCard({ student, target, index, menuOpen, onToggleMenu, onLog, on
             </button>
             {menuOpen && (
               <div className="absolute right-0 top-full mt-1 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl z-50 w-48 py-1 animate-slide-up">
-                <Link href={`/dashboard/teacher/student/${s.id}`} className="w-full px-3 py-2 flex items-center gap-2 text-sm text-emerald-300 hover:bg-slate-700 transition-colors">
-                  <User className="w-4 h-4 text-emerald-400" />
+                <Link href={`/dashboard/teacher/student/${s.id}`} className="w-full px-3 py-2 flex items-center gap-2 text-sm text-indigo-300 hover:bg-slate-700 transition-colors">
+                  <User className="w-4 h-4 text-indigo-400" />
                   <span>View Profile | ملف</span>
                 </Link>
                 <div className="border-t border-slate-700 my-1" />
                 <MenuItem icon={<Calendar className="w-4 h-4" />} label="Log Progress | تسجيل" onClick={onLog} />
-                <MenuItem icon={<Share2 className="w-4 h-4 text-emerald-400" />} label="WhatsApp Share" onClick={onShare} />
+                <MenuItem icon={<Share2 className="w-4 h-4 text-indigo-400" />} label="WhatsApp Share" onClick={onShare} />
                 <MenuItem icon={<FileText className="w-4 h-4" />} label="PDF Report" onClick={onReport} />
                 <MenuItem icon={<History className="w-4 h-4" />} label="History | السجل" onClick={onHistory} />
                 <MenuItem icon={<Pencil className="w-4 h-4" />} label="Edit Name | تعديل" onClick={onEdit} />
@@ -1250,7 +1250,7 @@ function StudentCard({ student, target, index, menuOpen, onToggleMenu, onLog, on
       <div className="mt-3 space-y-1.5">
         <div className="flex justify-between text-xs">
           <span className="text-slate-400">Last logged</span>
-          <span className={`font-semibold ${s.status === 'danger' ? 'text-red-400' : s.status === 'warning' ? 'text-amber-400' : 'text-emerald-400'}`}>
+          <span className={`font-semibold ${s.status === 'danger' ? 'text-red-400' : s.status === 'warning' ? 'text-amber-400' : 'text-indigo-400'}`}>
             {s.lastWeekSafhas} / {target}
           </span>
         </div>
@@ -1310,7 +1310,7 @@ function ModalActions({ onCancel, onConfirm, confirmLabel, danger, isSubmit, loa
     <div className="flex gap-2 mt-4">
       <button type="button" onClick={onCancel} disabled={loading} className="flex-1 bg-slate-700 hover:bg-slate-600 p-2.5 rounded-xl font-medium text-sm">Cancel | إلغاء</button>
       <button type={isSubmit ? 'submit' : 'button'} onClick={isSubmit ? undefined : onConfirm} disabled={loading}
-        className={`flex-1 p-2.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 ${danger ? 'bg-red-700' : 'bg-emerald-700'}`}>
+        className={`flex-1 p-2.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 ${danger ? 'bg-red-700' : 'bg-indigo-700'}`}>
         {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : confirmLabel}
       </button>
     </div>

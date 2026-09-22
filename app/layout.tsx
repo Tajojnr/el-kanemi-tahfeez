@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 // Controls safe-area layouts and screen zoom on mobile devices
 export const viewport: Viewport = {
-  themeColor: '#020617', // Dark slate/emerald theme matching your css
+  themeColor: '#020617', // Dark slate/indigo theme matching your css
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,

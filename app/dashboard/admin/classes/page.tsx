@@ -244,15 +244,15 @@ export default function ClassManagementPage() {
 
   if (loading) {
     return (
-      <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 flex flex-col items-center justify-center gap-3">
-        <Loader2 className="animate-spin text-emerald-500 w-8 h-8" />
+      <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/30 flex flex-col items-center justify-center gap-3">
+        <Loader2 className="animate-spin text-indigo-500 w-8 h-8" />
         <p className="text-sm text-slate-400">Loading Class Management...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 text-white pb-24">
+    <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/30 text-white pb-24">
 
       {/* HEADER */}
       <header className="bg-slate-900/80 backdrop-blur-xl border-b border-slate-800 sticky top-0 z-30">
@@ -263,14 +263,14 @@ export default function ClassManagementPage() {
             </Link>
             <div>
               <h1 className="text-lg sm:text-xl font-bold flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-emerald-400" />
+                <Building2 className="w-5 h-5 text-indigo-400" />
                 Class Management
               </h1>
               <p className="text-xs text-slate-400">Manage school classes, weekly targets & rosters</p>
             </div>
           </div>
           <div className="flex gap-2 w-full sm:w-auto">
-            <button onClick={() => setShowCreateModal(true)} className="bg-emerald-700 hover:bg-emerald-600 px-4 py-2.5 rounded-xl flex items-center gap-2 font-semibold text-sm transition-colors flex-1 sm:flex-none justify-center">
+            <button onClick={() => setShowCreateModal(true)} className="bg-indigo-700 hover:bg-indigo-600 px-4 py-2.5 rounded-xl flex items-center gap-2 font-semibold text-sm transition-colors flex-1 sm:flex-none justify-center">
               <Plus className="w-4 h-4" /> Add Class
             </button>
             <button onClick={() => loadData(true)} className="p-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl transition-colors">
@@ -289,11 +289,11 @@ export default function ClassManagementPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {classes.map(c => (
-              <div key={c.id} onClick={() => viewRoster(c)} className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between h-36 ${selectedClass?.id === c.id ? 'bg-emerald-950/20 border-emerald-500/60 shadow-lg shadow-emerald-950/10' : c.status === 'archived' ? 'bg-slate-900/40 border-slate-800 opacity-60' : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'}`}>
+              <div key={c.id} onClick={() => viewRoster(c)} className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between h-36 ${selectedClass?.id === c.id ? 'bg-indigo-950/20 border-indigo-500/60 shadow-lg shadow-indigo-950/10' : c.status === 'archived' ? 'bg-slate-900/40 border-slate-800 opacity-60' : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'}`}>
                 <div>
                   <div className="flex justify-between items-start gap-2">
                     <h3 className="font-semibold text-white truncate text-base">{c.display_name_en}</h3>
-                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 ${c.status === 'active' ? 'bg-emerald-950/60 text-emerald-400' : 'bg-red-950/60 text-red-400'}`}>{c.status}</span>
+                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 ${c.status === 'active' ? 'bg-indigo-950/60 text-indigo-400' : 'bg-red-950/60 text-red-400'}`}>{c.status}</span>
                   </div>
                   <p className="text-xs text-slate-400 truncate mt-1">Ustaz: {c.teacher_name || 'Unassigned'}</p>
                 </div>
@@ -301,7 +301,7 @@ export default function ClassManagementPage() {
                 <div className="flex justify-between items-end border-t border-slate-800/80 pt-3">
                   <div>
                     <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Weekly Target</span>
-                    <p className="text-sm font-bold text-emerald-300">{c.target_safhas} Safhas</p>
+                    <p className="text-sm font-bold text-indigo-300">{c.target_safhas} Safhas</p>
                   </div>
                   <div className="flex items-center gap-1.5 bg-slate-950/60 px-2.5 py-1 rounded-lg border border-slate-800">
                     <Users className="w-3.5 h-3.5 text-slate-400" />
@@ -321,17 +321,17 @@ export default function ClassManagementPage() {
               <div className="border-b border-slate-800 pb-4 shrink-0 space-y-3">
                 <div className="flex justify-between items-start gap-2">
                   <div>
-                    <h3 className="font-bold text-lg text-emerald-300 truncate">{selectedClass.display_name_en}</h3>
+                    <h3 className="font-bold text-lg text-indigo-300 truncate">{selectedClass.display_name_en}</h3>
                     <p className="text-xs text-slate-400">Class Roster</p>
                   </div>
                   <div className="flex gap-1">
                     <button onClick={() => { setEditName(selectedClass.display_name_en); setEditTarget(selectedClass.target_safhas || 6); setShowEditModal(true) }} className="p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg transition-all" title="Edit Class Settings"><Settings className="w-4 h-4" /></button>
-                    <button onClick={() => toggleArchiveClass(selectedClass)} className={`p-1.5 rounded-lg border transition-all ${selectedClass.status === 'active' ? 'bg-red-950/40 border-red-900/30 text-red-400 hover:bg-red-900/50' : 'bg-emerald-950/40 border-emerald-900/30 text-emerald-400 hover:bg-emerald-900/50'}`} title={selectedClass.status === 'active' ? 'Archive' : 'Activate'}><GraduationCap className="w-4 h-4" /></button>
+                    <button onClick={() => toggleArchiveClass(selectedClass)} className={`p-1.5 rounded-lg border transition-all ${selectedClass.status === 'active' ? 'bg-red-950/40 border-red-900/30 text-red-400 hover:bg-red-900/50' : 'bg-indigo-950/40 border-indigo-900/30 text-indigo-400 hover:bg-indigo-900/50'}`} title={selectedClass.status === 'active' ? 'Archive' : 'Activate'}><GraduationCap className="w-4 h-4" /></button>
                   </div>
                 </div>
 
                 <button onClick={() => setShowImportModal(true)} className="w-full bg-slate-800 hover:bg-slate-700 text-xs font-semibold py-2 rounded-xl flex items-center justify-center gap-2 text-slate-300 transition-colors">
-                  <Upload className="w-3.5 h-3.5 text-emerald-400" />
+                  <Upload className="w-3.5 h-3.5 text-indigo-400" />
                   <span>Bulk Import Students</span>
                 </button>
               </div>
@@ -339,7 +339,7 @@ export default function ClassManagementPage() {
               {/* Roster list */}
               <div className="overflow-y-auto flex-1 py-3 space-y-2">
                 {rosterLoading ? (
-                  <div className="flex justify-center py-10"><Loader2 className="animate-spin text-emerald-500 w-5 h-5" /></div>
+                  <div className="flex justify-center py-10"><Loader2 className="animate-spin text-indigo-500 w-5 h-5" /></div>
                 ) : roster.length === 0 ? (
                   <div className="text-center py-10">
                     <Users className="w-8 h-8 text-slate-700 mx-auto mb-2" />
@@ -377,11 +377,11 @@ export default function ClassManagementPage() {
           <form onSubmit={handleCreateClass} className="space-y-4">
             <div>
               <label className="text-xs text-slate-400 block mb-1.5">Class Name *</label>
-              <input type="text" required placeholder="e.g. Huffaz 3" value={newClassName} onChange={e => setNewClassName(e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none text-sm" />
+              <input type="text" required placeholder="e.g. Huffaz 3" value={newClassName} onChange={e => setNewClassName(e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none text-sm" />
             </div>
             <div>
               <label className="text-xs text-slate-400 block mb-1.5">Weekly Safhas Target</label>
-              <input type="number" min={1} max={30} value={newClassTarget} onChange={e => setNewClassTarget(Number(e.target.value))} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none text-sm text-center font-bold" />
+              <input type="number" min={1} max={30} value={newClassTarget} onChange={e => setNewClassTarget(Number(e.target.value))} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none text-sm text-center font-bold" />
             </div>
             <ModalButtons onCancel={() => setShowCreateModal(false)} label="Create Class" loading={isSubmitting} />
           </form>
@@ -394,11 +394,11 @@ export default function ClassManagementPage() {
           <form onSubmit={handleUpdateClass} className="space-y-4">
             <div>
               <label className="text-xs text-slate-400 block mb-1.5">Class Name</label>
-              <input type="text" required value={editName} onChange={e => setEditName(e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none text-sm" />
+              <input type="text" required value={editName} onChange={e => setEditName(e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none text-sm" />
             </div>
             <div>
               <label className="text-xs text-slate-400 block mb-1.5">Weekly Safhas Target</label>
-              <input type="number" min={1} max={30} value={editTarget} onChange={e => setEditTarget(Number(e.target.value))} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none text-sm text-center font-bold" />
+              <input type="number" min={1} max={30} value={editTarget} onChange={e => setEditTarget(Number(e.target.value))} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none text-sm text-center font-bold" />
             </div>
             <ModalButtons onCancel={() => setShowEditModal(false)} label="Save Changes" loading={isSubmitting} />
           </form>
@@ -411,10 +411,10 @@ export default function ClassManagementPage() {
           <form onSubmit={handleBulkImport} className="space-y-4">
             <div>
               <div className="flex gap-2 items-center mb-1.5">
-                <FileSpreadsheet className="w-4 h-4 text-emerald-400" />
+                <FileSpreadsheet className="w-4 h-4 text-indigo-400" />
                 <label className="text-xs text-slate-400 block font-medium">Enter Full Names (One per line)</label>
               </div>
-              <textarea required value={bulkInput} onChange={e => setBulkInput(e.target.value)} placeholder="Ahmad Hassan&#10;Muhammad Aliyu&#10;Bilal Abdullahi" rows={8} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none text-sm font-mono" />
+              <textarea required value={bulkInput} onChange={e => setBulkInput(e.target.value)} placeholder="Ahmad Hassan&#10;Muhammad Aliyu&#10;Bilal Abdullahi" rows={8} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none text-sm font-mono" />
             </div>
             <ModalButtons onCancel={() => setShowImportModal(false)} label={`Import to ${selectedClass.display_name_en}`} loading={isSubmitting} />
           </form>
@@ -432,7 +432,7 @@ export default function ClassManagementPage() {
 
             <div>
               <label className="text-xs text-slate-400 block mb-1.5 font-medium">Select Target Class</label>
-              <select required value={targetClassId} onChange={e => setTargetClassId(e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-emerald-500/40 outline-none text-sm">
+              <select required value={targetClassId} onChange={e => setTargetClassId(e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white focus:ring-2 focus:ring-indigo-500/40 outline-none text-sm">
                 <option value="">-- Select Class --</option>
                 {classes.filter(c => c.id !== selectedClass?.id && c.status === 'active').map(c => (
                   <option key={c.id} value={c.id}>{c.display_name_en}</option>
@@ -467,7 +467,7 @@ function ModalButtons({ onCancel, label, loading, disabled }: any) {
   return (
     <div className="flex gap-2 pt-2">
       <button type="button" onClick={onCancel} disabled={loading} className="flex-1 bg-slate-700 hover:bg-slate-600 p-2.5 rounded-xl font-medium transition-colors text-sm">Cancel</button>
-      <button type="submit" disabled={loading || disabled} className="flex-1 bg-emerald-700 hover:bg-emerald-600 p-2.5 rounded-xl font-semibold transition-colors text-sm flex items-center justify-center gap-2 text-white">
+      <button type="submit" disabled={loading || disabled} className="flex-1 bg-indigo-700 hover:bg-indigo-600 p-2.5 rounded-xl font-semibold transition-colors text-sm flex items-center justify-center gap-2 text-white">
         {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : label}
       </button>
     </div>

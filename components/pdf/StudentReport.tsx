@@ -11,7 +11,7 @@ import {
 } from '@react-pdf/renderer'
 
 /* ─────────── Scholarly Islamic Color Palette ─────────── */
-const PRIMARY_EMERALD = '#042f1a'
+const PRIMARY_EMERALD = '#1e1b4b'
 const SECONDARY_GOLD = '#b45309'
 const IVORY_TINT = '#fafaf9'
 const TEXT_DARK = '#1e293b'
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
 
 function getBadge(avgSafhas: number, targetSafhas: number) {
   const ratio = targetSafhas > 0 ? avgSafhas / targetSafhas : 1
-  if (ratio >= 1.0) return { label: 'EXCELLENT / ON TARGET', bg: '#dcfce7', color: '#15803d' }
+  if (ratio >= 1.0) return { label: 'EXCELLENT / ON TARGET', bg: '#e0e7ff', color: '#4338ca' }
   if (ratio >= 0.66) return { label: 'NEEDS IMPROVEMENT', bg: '#fef9c3', color: '#a16207' }
   return { label: 'CRITICAL / AT RISK', bg: '#fee2e2', color: '#b91c1c' }
 }

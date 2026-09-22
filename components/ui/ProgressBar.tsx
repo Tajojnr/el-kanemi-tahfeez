@@ -1,7 +1,7 @@
 export function ProgressBar({ value, max, status }: { value: number; max: number; status: 'safe' | 'warning' | 'danger' }) {
   const pct = Math.min((value / max) * 100, 100)
   const colors = {
-    safe: 'bg-emerald-500',
+    safe: 'bg-indigo-500',
     warning: 'bg-amber-500',
     danger: 'bg-red-500',
   }

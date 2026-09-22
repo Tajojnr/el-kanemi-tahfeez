@@ -10,7 +10,7 @@ export function EmptyState({ onAdd }: { onAdd: () => void }) {
       <p className="text-sm text-slate-400 mb-5">Add your first student to start tracking Hifz progress</p>
       <button
         onClick={onAdd}
-        className="bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
+        className="bg-indigo-700 hover:bg-indigo-600 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
       >
         + Add Your First Student
       </button>
