@@ -8,6 +8,7 @@ import { pdf } from '@react-pdf/renderer'
 import { StudentReportPDF } from '@/components/pdf/StudentReport'
 import { useToast } from '@/components/Toast'
 import { StudentAvatar } from '@/components/ui/StudentAvatar'
+import { LoadingOverlay } from '@/components/ui/LoadingOverlay'
 import {
   ArrowLeft, BookOpen, Award, Share2, FileText,
   Loader2, History, Clock
@@ -219,17 +220,11 @@ _May Allah bless ${student.full_name}'s journey in memorising the Holy Quran and
     }
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 flex flex-col items-center justify-center gap-3">
-        <Loader2 className="animate-spin text-emerald-500 w-8 h-8" />
-        <p className="text-sm text-slate-400">Loading student profile...</p>
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-dvh bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 text-white pb-24">
+
+      {/* ✅ Premium Loading Overlay injected here */}
+      <LoadingOverlay isLoading={loading} text="جاري التحميل | Loading..." />
 
       {/* HEADER */}
       <header className="bg-slate-900/80 backdrop-blur-xl border-b border-slate-800 sticky top-0 z-30">

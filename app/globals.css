@@ -48,49 +48,30 @@
 }
 
 :root {
-    /* Sophisticated Warm Ivory / Light Cream Background */
     --background: oklch(0.99 0.003 140);
-    --foreground: oklch(0.18 0.02 140); /* Very deep dark forest gray */
-    
-    /* Clean, soft cards */
+    --foreground: oklch(0.18 0.02 140);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.18 0.02 140);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.18 0.02 140);
-    
-    /* Scholarly Deep Emerald Green */
     --primary: oklch(0.32 0.06 140);
     --primary-foreground: oklch(0.98 0.01 140);
-    
-    /* Sage Green / Slate Muted Accent */
     --secondary: oklch(0.95 0.015 140);
     --secondary-foreground: oklch(0.32 0.06 140);
-    
-    /* Subdued Slate Muted Colors */
     --muted: oklch(0.96 0.005 140);
     --muted-foreground: oklch(0.48 0.015 140);
-    
-    /* Premium Gold/Amber Accent (For badges, highlighting, Hifz achievements) */
     --accent: oklch(0.75 0.11 85);
     --accent-foreground: oklch(0.25 0.05 85);
-    
     --destructive: oklch(0.55 0.18 28);
-    
-    /* Ultra-clean Borders */
     --border: oklch(0.92 0.01 140);
     --input: oklch(0.92 0.01 140);
     --ring: oklch(0.32 0.06 140 / 30%);
-    
-    /* Charts */
     --chart-1: oklch(0.45 0.08 140);
     --chart-2: oklch(0.75 0.11 85);
     --chart-3: oklch(0.60 0.10 180);
     --chart-4: oklch(0.40 0.06 140);
     --chart-5: oklch(0.30 0.04 140);
-    
-    --radius: 0.75rem; /* Slightly rounder for a modern friendly app feel */
-    
-    /* Sidebar styling matching the clean white layout */
+    --radius: 0.75rem;
     --sidebar: oklch(0.99 0.003 140);
     --sidebar-foreground: oklch(0.18 0.02 140);
     --sidebar-primary: oklch(0.32 0.06 140);
@@ -102,36 +83,24 @@
 }
 
 .dark {
-    /* Luxury Dark Mode: Midnight Forest Slate (Not pure pitch-black) */
     --background: oklch(0.12 0.01 150);
     --foreground: oklch(0.93 0.01 150);
-    
-    /* Elegant Dark Greenish-Grey Containers */
     --card: oklch(0.16 0.015 150);
     --card-foreground: oklch(0.95 0.01 150);
     --popover: oklch(0.16 0.015 150);
     --popover-foreground: oklch(0.95 0.01 150);
-    
-    /* Vivid soft mint emerald for high legibility in dark mode */
     --primary: oklch(0.76 0.09 140);
     --primary-foreground: oklch(0.12 0.01 150);
-    
     --secondary: oklch(0.20 0.015 150);
     --secondary-foreground: oklch(0.85 0.02 140);
-    
     --muted: oklch(0.18 0.012 150);
     --muted-foreground: oklch(0.65 0.015 150);
-    
-    /* Golden glow in dark mode */
     --accent: oklch(0.84 0.11 85);
     --accent-foreground: oklch(0.18 0.04 85);
-    
     --destructive: oklch(0.62 0.17 28);
-    
     --border: oklch(0.24 0.015 150);
     --input: oklch(0.24 0.015 150);
     --ring: oklch(0.76 0.09 140 / 30%);
-    
     --sidebar: oklch(0.14 0.012 150);
     --sidebar-foreground: oklch(0.93 0.01 150);
     --sidebar-primary: oklch(0.76 0.09 140);
@@ -154,24 +123,41 @@
   }
 }
 
-/* Elegant utility animation for PWAs & Alerts */
+/* ────────── CUSTOM ANIMATIONS ────────── */
 @keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* Premium Elastic Pop Animation */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+.animate-breathe {
+  animation: breathe 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* Smooth Backdrop Blur */
+@keyframes fade-in-blur {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to { opacity: 1; backdrop-filter: blur(8px); }
+}
+.animate-fade-in-blur {
+  animation: fade-in-blur 0.35s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-breathe, .animate-slide-up, .animate-fade-in-blur {
+    animation: none !important;
+    transform: none !important;
   }
 }
 
-.animate-slide-up {
-  animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-/* Shepherd.js El-Kanemi Custom Theme */
+/* ────────── SHEPHERD.JS THEME ────────── */
 .shepherd-element {
-  background: #042f1a !important; /* Primary Emerald */
+  background: #042f1a !important; 
   border: 1px solid #059669 !important;
   border-radius: 12px !important;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
@@ -179,35 +165,29 @@
   font-family: inherit !important;
   max-width: 320px;
 }
-
 .shepherd-arrow:before {
   background: #042f1a !important;
   border-color: #059669 !important;
 }
-
 .shepherd-header {
   background: transparent !important;
   padding: 1rem 1rem 0 !important;
   border: none !important;
 }
-
 .shepherd-title {
-  color: #fbbf24 !important; /* Amber/Gold */
+  color: #fbbf24 !important;
   font-weight: 700 !important;
   font-size: 1.1rem !important;
 }
-
 .shepherd-text {
-  color: #cbd5e1 !important; /* Slate 300 */
+  color: #cbd5e1 !important;
   padding: 1rem !important;
   font-size: 0.875rem !important;
   line-height: 1.5 !important;
 }
-
 .shepherd-footer {
   padding: 0 1rem 1rem !important;
 }
-
 .shepherd-button {
   background: #059669 !important;
   color: white !important;
@@ -216,64 +196,6 @@
   font-weight: 600 !important;
   transition: all 0.2s !important;
 }
-.shepherd-button:hover {
-  background: #047857 !important;
-}
-.shepherd-button-secondary {
-  background: #1e293b !important;
-  color: #94a3b8 !important;
-}
-.shepherd-button-secondary:hover {
-  background: #334155 !important;
-  color: white !important;
-}
-.shepherd-cancel-icon {
-  color: #94a3b8 !important;
-}
-.shepherd-cancel-icon:hover {
-  color: #f87171 !important; /* Red 400 */
-}
-/* Premium Breathing Logo Animation */
-@keyframes premium-breathe {
-  0% {
-    transform: scale(0.85);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.85);
-    opacity: 0.8;
-  }
-}
-
-.animate-breathe {
-  animation: premium-breathe 0.7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/* Smooth Overlay Fades */
-@keyframes fade-in-blur {
-  from {
-    opacity: 0;
-    backdrop-filter: blur(0px);
-  }
-  to {
-    opacity: 1;
-    backdrop-filter: blur(8px);
-  }
-}
-
-.animate-fade-in-blur {
-  animation: fade-in-blur 0.3s ease-out forwards;
-}
-
-/* Accessibility: Stop motion if user prefers */
-@media (prefers-reduced-motion: reduce) {
-  .animate-breathe {
-    animation: none;
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+.shepherd-button:hover { background: #047857 !important; }
+.shepherd-button-secondary { background: #1e293b !important; color: #94a3b8 !important; }
+.shepherd-button-secondary:hover { background: #334155 !important; color: white !important; }
